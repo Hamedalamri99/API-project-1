@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted String Processor</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .main-card {
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            background: #fff;
+        }
+        .brand-title {
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #3b82f6;
+        }
+        .results-area, #historyArea {
+            background: #f8fafc;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            min-height: 40px;
+            font-size: 1.1rem;
+            color: #333;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        #historyArea > div {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        #historyArea > div:last-child {
+            border-bottom: none;
+        }
+        .api-image {
+            display: block;
+            margin: 0 auto 1.5rem auto;
+            max-width: 120px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card main-card">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Encryption Icon" class="api-image">
+                        <h1 class="brand-title text-center mb-4">Encrypted String Processor</h1>
+                        <p class="text-center text-muted mb-4">
+                            Enter a string to process it securely.<br>
+                            Your history is encrypted when the server is off and only visible while the server is running.
+                        </p>
+                        <form id="convertForm" autocomplete="off">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-primary text-white">Input</span>
+                                <input type="text" id="userInput" class="form-control form-control-lg" placeholder="Type your string here..." required>
+                            </div>
+                            <div class="d-flex gap-2 mb-3 justify-content-center">
+                                <button type="submit" id="convertButton" class="btn btn-primary btn-lg">
+                                    <span class="me-1">&#9889;</span> Convert
+                                </button>
+                                <button type="button" id="historyButton" class="btn btn-outline-info btn-lg">
+                                    <span class="me-1">&#128214;</span> Show History
+                                </button>
+                                <button type="button" id="clearButton" class="btn btn-outline-secondary btn-lg">
+                                    <span class="me-1">&#128465;</span> Clear
+                                </button>
+                            </div>
+                        </form>
+                        <div id="resultArea" class="results-area mb-3"></div>
+                        <h5 class="text-primary mt-4 mb-2">History</h5>
+                        <div id="historyArea" class="results-area"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS (optional, for some components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
