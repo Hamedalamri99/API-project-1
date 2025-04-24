@@ -238,7 +238,7 @@ signal.signal(signal.SIGTERM, handle_shutdown)
 
 # === Run FastAPI App ===
 if __name__ == "__main__":
-    logging.info("Starting FastAPI server on http://localhost:8000")
+    logging.info("Starting FastAPI server on http://localhost:8888")
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    uvicorn.run(app, host="0.0.0.0", port=8888, log_level="info")
     logging.info("FastAPI server stopped.")
