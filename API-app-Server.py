@@ -10,28 +10,11 @@ from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from string_processor import process_string
+from APItest import process_string
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 
 load_dotenv()
-
-# === Preparation and Notes ===
-
-## Prerequisites
-
-# - **Python 3.8+** installed on your system.
-# - **MongoDB** installed and running locally or accessible via a connection string.
-# - **RSA Keys**: You need `private.pem` and `public.pem` files for encryption/decryption.
-#   - If you don't have them, see the "Generating RSA Keys" section above.
-
-## Installing Dependencies
-
-# Open your terminal in the project directory and run:
-
-# ```sh
-# pip install fastapi uvicorn pymongo cryptography python-dotenv
-# ```
 
 # === FastAPI App Setup ===
 app = FastAPI()
